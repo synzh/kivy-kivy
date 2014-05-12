@@ -1,25 +1,36 @@
 <NumberButton@Button>
     size: 100,100
     size_hint: None, None
+    font_size: 20
 
 <EduAppScreen>:
-    AnchorLayout:
-        anchor_x: 'left'
-        anchor_y: 'center'
-        Label:
-            id: txt_int1
-            text: root.label_text
+    GridLayout:
+        rows:3
         BoxLayout:
-            padding: 150
-            NumberButton:
-                text: root.btn_text1
-                on_press: root.check_solution(1)
-            NumberButton:
-                text: root.btn_text2
-                on_press: root.check_solution(2)
-            NumberButton:
-                text: root.btn_text3
-                on_press: root.check_solution(3)
-            NumberButton:
-                text: root.btn_text4
-                on_press: root.check_solution(4)
+            Label: 
+                text: root.scores_text
+                font_size:'20sp'
+        BoxLayout:
+            orientation: 'vertical'
+            Label:
+		        id: txt_int1
+                text: root.label_text   
+                font_size:'20sp'       
+        BoxLayout:
+            orientation: 'vertical'
+            spacing: '10dp'
+            padding: '150dp'
+            BoxLayout:
+                orientation: 'horizontal'
+                NumberButton:
+                    text: root.btn_text1
+                    on_press: root.check_solution(1)
+                NumberButton:
+                    text: root.btn_text2
+                    on_press: root.check_solution(2)         
+                NumberButton:
+                    text: root.btn_text3
+                    on_press: root.check_solution(3)
+                NumberButton:
+                    text: root.btn_text4
+                    on_press: root.check_solution(4)
